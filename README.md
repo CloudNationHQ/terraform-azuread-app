@@ -252,4 +252,4 @@ MIT Licensed. See [LICENSE](./LICENSE) for full details.
 
 - [Documentation](https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals)
 - [Rest Api](https://learn.microsoft.com/en-us/graph/api/resources/application)
-- [Rest Api Specs](https://github.com/Azure/azure-rest-api-specs/tree/main/specification/graphrbac)
+- [Rest Api Specs](https://github.com/Azure/azure-rest-api-specs/tree/main/specification/azureactivedirectory)
