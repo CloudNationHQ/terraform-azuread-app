@@ -33,7 +33,7 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
-- <a name="provider_azuread"></a> [azuread](#provider\_azuread) (~> 3.0)
+- <a name="provider_azuread"></a> [azuread](#provider\_azuread) (3.8.0)
 
 ## Resources
 
@@ -47,7 +47,7 @@ The following resources are used by this module:
 
 The following input variables are required:
 
-### <a name="input_config"></a> [config](#input\_config)
+### <a name="input_registration"></a> [registration](#input\_registration)
 
 Description: contains app registration configuration
 
@@ -90,7 +90,7 @@ object({
         id                         = string
         admin_consent_description  = string
         admin_consent_display_name = string
-        enabled                    = optional(bool, true)
+        enabled                    = optional(bool)
         type                       = optional(string, "User")
         user_consent_description   = optional(string)
         user_consent_display_name  = optional(string)
@@ -103,7 +103,7 @@ object({
       description          = string
       display_name         = string
       id                   = string
-      enabled              = optional(bool, true)
+      enabled              = optional(bool)
       value                = optional(string)
     })), {})
 
@@ -167,7 +167,7 @@ object({
     })), {})
 
     service_principal = optional(object({
-      account_enabled               = optional(bool, true)
+      account_enabled               = optional(bool)
       alternative_names             = optional(set(string))
       app_role_assignment_required  = optional(bool, false)
       description                   = optional(string)
@@ -201,13 +201,13 @@ No optional inputs.
 
 The following outputs are exported:
 
-### <a name="output_config"></a> [config](#output\_config)
-
-Description: contains app registration configuration
-
 ### <a name="output_pre_authorized_applications"></a> [pre\_authorized\_applications](#output\_pre\_authorized\_applications)
 
 Description: contains all pre-authorized application configurations
+
+### <a name="output_registration"></a> [registration](#output\_registration)
+
+Description: contains app registration configuration
 
 ### <a name="output_service_principal"></a> [service\_principal](#output\_service\_principal)
 
