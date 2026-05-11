@@ -45,7 +45,7 @@ resource "azuread_application" "this" {
           id                         = oauth2_permission_scope.value.id
           admin_consent_description  = oauth2_permission_scope.value.admin_consent_description
           admin_consent_display_name = oauth2_permission_scope.value.admin_consent_display_name
-          enabled                    = try(oauth2_permission_scope.value.enabled, true)
+          enabled                    = oauth2_permission_scope.value.enabled
           type                       = oauth2_permission_scope.value.type
           user_consent_description   = oauth2_permission_scope.value.user_consent_description
           user_consent_display_name  = oauth2_permission_scope.value.user_consent_display_name
@@ -63,7 +63,7 @@ resource "azuread_application" "this" {
       description          = app_role.value.description
       display_name         = app_role.value.display_name
       id                   = app_role.value.id
-      enabled              = try(app_role.value.enabled, true)
+      enabled              = app_role.value.enabled
       value                = app_role.value.value
     }
   }
@@ -185,7 +185,7 @@ resource "azuread_service_principal" "this" {
   for_each = var.registration.service_principal != null ? { this = {} } : {}
 
   client_id                     = azuread_application.this.client_id
-  account_enabled               = try(var.registration.service_principal.account_enabled, true)
+  account_enabled               = var.registration.service_principal.account_enabled
   alternative_names             = var.registration.service_principal.alternative_names
   app_role_assignment_required  = var.registration.service_principal.app_role_assignment_required
   description                   = var.registration.service_principal.description
