@@ -2,7 +2,7 @@ module "app_registration" {
   source  = "cloudnationhq/aadapp/azure"
   version = "~> 1.0"
 
-  config = {
+  registration = {
     display_name = "app-roles-demo-dev"
 
     app_roles = {

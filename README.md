@@ -4,21 +4,21 @@ This terraform module simplifies the creation and management of Azure AD app reg
 
 ## Features
 
-Capability to deploy app registrations with full control over sign-in audience and identifier URIs.
+Capability to deploy app registrations with full control over sign-in audience and identifier URIs
 
-Includes support for OAuth2 permission scopes and pre-authorized client applications.
+Includes support for OAuth2 permission scopes and pre-authorized client applications
 
-Supports app roles for role-based access control within applications.
+Supports app roles for role-based access control within applications
 
-Configurable web, SPA, and public client redirect URIs with implicit grant settings.
+Configurable web, SPA, and public client redirect URIs with implicit grant settings
 
-Optional claims configuration for access tokens, ID tokens, and SAML2 tokens.
+Optional claims configuration for access tokens, ID tokens, and SAML2 tokens
 
-Required resource access declarations for Microsoft Graph and other APIs.
+Required resource access declarations for Microsoft Graph and other APIs
 
-Service principal creation with configurable assignment requirements and feature tags.
+Service principal creation with configurable assignment requirements and feature tags
 
-Utilization of terratest for robust validation.
+Utilization of terratest for robust validation
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -229,10 +229,6 @@ Using a dedicated module, we've developed a naming convention for resources that
 Full examples detailing all usages, along with integrations with dependency modules, are located in the examples directory.
 
 To update the module's documentation run `make docs`
-
-## Authors
-
-Module is maintained by [these awesome contributors](https://github.com/cloudnationhq/terraform-azure-aadapp/graphs/contributors).
 
 ## Contributors
 

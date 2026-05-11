@@ -1,4 +1,4 @@
-output "config" {
+output "registration" {
   description = "contains app registration configuration"
   value       = azuread_application.this
 }
