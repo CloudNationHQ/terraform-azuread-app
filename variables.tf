@@ -1,4 +1,4 @@
-variable "config" {
+variable "registration" {
   description = "contains app registration configuration"
   type = object({
     display_name                   = string
@@ -36,7 +36,7 @@ variable "config" {
         id                         = string
         admin_consent_description  = string
         admin_consent_display_name = string
-        enabled                    = optional(bool, true)
+        enabled                    = optional(bool)
         type                       = optional(string, "User")
         user_consent_description   = optional(string)
         user_consent_display_name  = optional(string)
@@ -49,7 +49,7 @@ variable "config" {
       description          = string
       display_name         = string
       id                   = string
-      enabled              = optional(bool, true)
+      enabled              = optional(bool)
       value                = optional(string)
     })), {})
 
@@ -113,7 +113,7 @@ variable "config" {
     })), {})
 
     service_principal = optional(object({
-      account_enabled               = optional(bool, true)
+      account_enabled               = optional(bool)
       alternative_names             = optional(set(string))
       app_role_assignment_required  = optional(bool, false)
       description                   = optional(string)
@@ -137,4 +137,12 @@ variable "config" {
       }))
     }))
   })
+
+  validation {
+    condition = var.registration.sign_in_audience == null || contains(
+      ["AzureADMyOrg", "AzureADMultipleOrgs", "AzureADandPersonalMicrosoftAccount", "PersonalMicrosoftAccount"],
+      var.registration.sign_in_audience
+    )
+    error_message = "sign_in_audience must be one of: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount."
+  }
 }

@@ -2,7 +2,7 @@ module "api" {
   source  = "cloudnationhq/aadapp/azure"
   version = "~> 1.0"
 
-  config = {
+  registration = {
     display_name    = "api-demo-dev"
     identifier_uris = ["api://api-demo-dev"]
 
@@ -21,7 +21,7 @@ module "api" {
 
     pre_authorized_applications = {
       client = {
-        authorized_client_id = module.client.config.client_id
+        authorized_client_id = module.client.registration.client_id
         permission_ids       = ["00000000-0000-0000-0000-000000000001"]
       }
     }
@@ -34,7 +34,7 @@ module "client" {
   source  = "cloudnationhq/aadapp/azure"
   version = "~> 1.0"
 
-  config = {
+  registration = {
     display_name = "client-demo-dev"
 
     service_principal = {}

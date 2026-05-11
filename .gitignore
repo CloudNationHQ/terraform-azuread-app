@@ -1,6 +1,8 @@
 # Local .terraform directories
 .terraform/
-.terraform.lock.hcl
+
+# Ignore lock files in examples (track root lock file for consumer reproducibility)
+examples/**/.terraform.lock.hcl
 
 # .tfstate files
 *.tfstate
