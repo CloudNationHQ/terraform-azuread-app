@@ -4,10 +4,10 @@ variable "registration" {
     display_name                   = string
     description                    = optional(string)
     sign_in_audience               = optional(string, "AzureADMyOrg")
-    identifier_uris                = optional(set(string), [])
+    identifier_uris                = optional(set(string))
     group_membership_claims        = optional(set(string))
     owners                         = optional(set(string))
-    device_only_auth_enabled       = optional(bool, false)
+    device_only_auth_enabled       = optional(bool)
     fallback_public_client_enabled = optional(bool, false)
     logo_image                     = optional(string)
     marketing_url                  = optional(string)
