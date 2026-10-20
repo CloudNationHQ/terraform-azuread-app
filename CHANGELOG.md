@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/CloudNationHQ/terraform-azuread-app/compare/v1.0.0...v1.1.0) (2026-10-20)
+
+
+### Features
+
+* **deps:** bump github.com/klauspost/compress in /tests ([#6](https://github.com/CloudNationHQ/terraform-azuread-app/issues/6)) ([adb0ebf](https://github.com/CloudNationHQ/terraform-azuread-app/commit/adb0ebf57cdd25c881f26966340d804fe6b725a1))
+
 ## 1.0.0 (2026-07-13)
 
 
